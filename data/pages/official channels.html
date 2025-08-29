@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YumYum — OFFICIAL CHANNELS</title>
+    <link rel="stylesheet" href="/data/styles/YUMZCV.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="navbar"></nav>
+
+    <div id="ofchannels" class="content-container"></div>
+
+    <script src="../../js/main.js"></script>
+    <script>
+      fetch("../json/ofchannels.json")
+        .then((r) => r.json())
+        .then((json) => {
+          loadSection(json, "ofchannels", navigator.language.slice(0, 2));
+        });
+
+      loadNavbar("../home/langs.json", ".", "navbar");
+    </script>
+  </body>
+</html>

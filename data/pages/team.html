@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/YUMZCV.css" />
+    <title>YumYum — TEAM</title>
+  </head>
+  <style>
+    .YUME-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .YUME-image img {
+      max-width: 80%;
+      max-height: 400px;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+    }
+  </style>
+  <body>
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="YUME-image">
+      <img src="/data/img/YUME_text.png" alt="YUME" />
+    </div>
+
+    <div id="team" class="content-container"></div>
+
+    <script src="../../js/main.js"></script>
+    <script>
+      fetch("../json/team.json")
+        .then((r) => r.json())
+        .then((json) => {
+          loadSection(json, "team", navigator.language.slice(0, 2), false, "");
+        });
+
+      loadNavbar("../home/langs.json", ".", "navbar");
+    </script>
+  </body>
+</html>

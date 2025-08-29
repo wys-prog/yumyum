@@ -1,0 +1,37 @@
+{
+  "home": {
+    "en": "Home",
+    "ja": "ホーム",
+    "tr": "Ana Sayfa"
+  },
+  "news": {
+    "en": "News",
+    "ja": "ニュース",
+    "tr": "Haberler"
+  },
+  "projects": {
+    "en": "Projects",
+    "ja": "プロジェクト",
+    "tr": "Projeler"
+  },
+  "updates": {
+    "en": "Updates",
+    "ja": "アップデート",
+    "tr": "Güncellemeler"
+  },
+  "releases": {
+    "en": "Releases",
+    "ja": "リリース",
+    "tr": "Sürümler"
+  },
+  "team": {
+    "en": "Team",
+    "ja": "チーム",
+    "tr": "Takım"
+  },
+  "official channels": {
+    "en": "Official Channels",
+    "ja": "公式チャンネル",
+    "tr": "Resmî Kanallar"
+  }
+}

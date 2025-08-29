@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YumYum — Yume</title>
+    <link rel="stylesheet" href="../styles/YUMZCV.css" />
+    <style>
+      .YUME-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .YUME-image img {
+        max-width: 80%;
+        max-height: 400px;
+        height: auto;
+        width: auto;
+        object-fit: contain;
+      }
+    </style>
+
+    <link rel="icon" href="/data/img/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="YUME-image">
+      <img src="/data/img/YUME_text.png" alt="YUME" />
+    </div>
+
+    <div>
+      <div id="news-scroll" class="news-scroll"></div>
+      <div class="section-footer">
+        <a class="see-all" href="./news.html">See all News →</a>
+      </div>
+      <div id="updates-scroll" class="news-scroll"></div>
+      <div class="section-footer">
+        <a class="see-all" href="./updates.html">See all Updates →</a>
+      </div>
+      <div id="projects-scroll" class="news-scroll"></div>
+    </div>
+
+    <div id="home-content" class="home-content"></div>
+
+    <script src="/js/main.js"></script>
+    <script>
+      ["news", "updates"].forEach((elem) => {
+        fetch(`/data/json/${elem}.json`)
+          .then((r) => r.json())
+          .then((json) => {
+            loadSection(
+              json.slice(-7),
+              `${elem}-scroll`,
+              navigator.language.slice(0, 2)
+            );
+          });
+      });
+
+      loadNavbar("/data/home/langs.json", ".", "navbar");
+
+      fetch("/data/json/home.json")
+        .then((r) => r.json())
+        .then((json) => {
+          const doc = document.getElementById("home-content");
+          doc.innerHTML +=
+            json[navigator.language.slice(0, 2)] || json["en"] || "";
+        });
+    </script>
+  </body>
+</html>
